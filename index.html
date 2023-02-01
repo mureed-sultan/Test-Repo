@@ -9,28 +9,24 @@
   <body>
     <form action="post">
       <input id="parent" type="checkbox" onclick="process()" /> Parent
-      Checkbox<br/>
+      Checkbox<br />
       <input class="child" type="checkbox" /> Child Check 1<br />
       <input class="child" type="checkbox" /> Child Check 2<br />
       <input class="child" type="checkbox" /> Child Check 3<br />
       <input class="child" type="checkbox" /> Child Check 4<br />
     </form>
-    <p>If there is 1 billion checkbox with class child must select with parent id</p>
+    <p>
+      If there is 1 billion checkbox with class child must select with parent id
+    </p>
   </body>
   <script>
     let checkMain = document.getElementById("parent");
     let child = document.getElementsByClassName("child");
     // console.log(child);
     const process = () => {
-      if (checkMain.checked == true) {
         Array.from(child).forEach((e) => {
-          e.checked = true;
+          e.checked =!e.checked;
         });
-      } else {
-        Array.from(child).forEach((e) => {
-          e.checked = false;
-        });
-      }
     };
   </script>
 </html>
